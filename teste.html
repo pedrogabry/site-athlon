@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("_LqrJvH6AkJNS2elQ"); // Substitua pelo seu Public Key
+    })();
+    </script>
+</head>
+<body>
+
+<form id="myForm">
+  <input type="text" name="name" placeholder="Seu nome" required>
+  <input type="email" name="email" placeholder="Seu email" required>
+  <textarea name="valor" placeholder="Sua mensagem" required></textarea>
+  <button type="submit">Enviar</button>
+</form>
+
+</body>
+<script type="text/javascript">
+  document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita recarregar página
+
+    emailjs.sendForm('service_v745iw3', 'template_kgm3fel', this)
+      .then(function() {
+        alert('Mensagem enviada com sucesso!');
+      }, function(error) {
+        alert('Falhou ao enviar: ' + JSON.stringify(error));
+      });
+  });
+</script>
+</html>l

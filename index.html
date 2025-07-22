@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("_LqrJvH6AkJNS2elQ"); // Substitua pelo seu Public Key
+    })();
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,12 +52,10 @@
             <div>
                 <h2>Sobre Nós</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum error doloremque consectetur. Illo, at facilis, excepturi animi cupiditate voluptatum impedit, quo iusto maiores iure fugit praesentium sequi? Officia, deserunt nam!
-                </p>
+                    A Athlon Engenharia atua desde 2016 com foco em gestão e concepção de negócios na construção civil.
+                    Com agilidade, excelência e know-how técnico, entregamos soluções eficientes por meio de uma equipe qualificada, garantindo a satisfação de clientes e parceiros.                </p>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sint distinctio nam at harum commodi necessitatibus id dolorem. Harum reiciendis commodi sequi magnam omnis exercitationem necessitatibus in, voluptatum repellat esse!
-                </p>
-                
+                    Mais do que construir, a Athlon Engenharia transforma ideias em empreendimentos de sucesso, unindo técnica, inovação e compromisso em cada etapa para gerar valor e confiança para clientes e parceiros.                
             </div>
         </div>
     </section>
@@ -62,11 +65,11 @@
             <div class="contact-methods">
                 <div>
                     <h3>fale conosco</h3>
-                    <form action="">
-                        <input type="text" placeholder="seu nome" required>
-                        <input type="email" placeholder="seu e-mail" required>
-                        <input type="tel" placeholder="seu telefone (opciona)">
-                        <textarea placeholder="sua mensagem " name="" id="" cols="30" rows="10" required></textarea>
+                    <form id="myForm">
+                        <input type="text" name="name" placeholder="seu nome" required>
+                        <input type="email" name="email" placeholder="seu e-mail" required>
+                        <input type="tel" name="phone" placeholder="seu telefone (opciona)">
+                        <textarea name="valor" placeholder="sua mensagem " cols="30" rows="10" required></textarea>
                         <button type="submit">enviar</button>
                     </form>
                 </div>
@@ -103,9 +106,21 @@
     <footer>
         <div class="container">
             <p>
-                &copy; Athlon Engenharia - todos os direitos reservados - 2022
+                &copy; Athlon Engenharia - todos os direitos reservados - 2016
             </p>
         </div>
     </footer>
 </body>
+<script type="text/javascript">
+  document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita recarregar página
+
+    emailjs.sendForm('service_v745iw3', 'template_kgm3fel', this)
+      .then(function() {
+        alert('Mensagem enviada com sucesso!');
+      }, function(error) {
+        alert('Falhou ao enviar: ' + JSON.stringify(error));
+      });
+  });
+</script>
 </html>

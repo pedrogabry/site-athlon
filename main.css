@@ -3,21 +3,35 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body.ativo{
+    overflow: hidden;
+}
 body, input, textarea {
     flex: 1;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     background-color: #f4f6fa;
     color: #333;
+    
 }
 
-header, section h2, section h3, form button {
-    font-family: 'Bungee', cursive;
-    font-weight: normal;
+header, section h2, section h3, form button, h1 {
+   font-family: "Goldman", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+#divlogo {
+    display: flex;
+    align-items: center;
+}
+#logo {
+    margin-right: 10px;
+    max-width: 40px;
+    height: auto;
 }
 
 header {
+    
     padding: 24px 0;
     background-color: #18181a;
     color: #ecf0f1;
@@ -25,6 +39,9 @@ header {
 }
 
 header h1 {
+    font-family: "Goldman", sans-serif;
+    font-weight: 700;
+    font-style: normal;
     font-size: 28px;
 }
 
@@ -209,13 +226,20 @@ footer {
 
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
+    body.ativo{
+        overflow: hidden;
+    }
     body {
         font-size: 15px;
     }
-
+    #logo {
+    margin-right: 10px;
+    max-width: 30px;
+    height: auto;
+}
     header h1 {
         text-align: center;
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .about-section .container {
@@ -249,6 +273,8 @@ footer {
 
 /* A partir de 640px, fica lado a lado */
 @media (min-width: 640px) {
+     body.ativo{
+        overflow: hidden;}
     .about-section .container {
         flex-direction: row;
         align-items: center;
@@ -258,6 +284,9 @@ footer {
 }
 
 @media (min-width: 950px) {
+     body.ativo{
+        overflow: hidden;
+    }
     .container {
         display: flex;
         align-items: flex-start;
@@ -370,6 +399,7 @@ nav.menu ul li a {
 }
 
 .parceiro-card {
+    align-content: center;
     background-color: #fff;
     border-radius: 12px;
     padding: 16px;
@@ -400,6 +430,8 @@ nav.menu ul li a {
 
 
 
+
+
 .projetos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -419,16 +451,13 @@ nav.menu ul li a {
     transition: transform 0.3s ease;
 }
 
-.projeto-card:hover {
-    transform: scale(1.03);
-}
-
 .projeto-card img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 12px;
 }
+
 
 .projeto-card h3 {
     font-size: 20px;
@@ -439,6 +468,22 @@ nav.menu ul li a {
 .projeto-card p {
     font-size: 14px;
     line-height: 1.5;
+}
+div.projeto-card.ativo h3, p {
+    display: none;
+}
+
+div.projeto-card.ativo {
+    background-color: #25242491;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    padding: 5px;
+    transform: translate(-50%, -50%);
+    align-items: center;
 }
 
 /* Responsivo (ajustes finos) */

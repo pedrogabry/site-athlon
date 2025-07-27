@@ -6,6 +6,9 @@
         emailjs.init("_LqrJvH6AkJNS2elQ"); // Substitua pelo seu Public Key
     })();
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +31,10 @@
 <body>
     <header>
         <div id="container">
-            <h1>Athlon Engenharia</h1>
+            <div id="divlogo">
+                <img id="logo" src="img/output-onlinepngtools (1).png" alt="">
+                <h1>ATHLON ENGENHARIA</h1>
+            </div>
             <div class="menu-container">
                 <button class="menu-toggle" aria-label="Abrir menu">
                     <span></span>
@@ -50,7 +56,7 @@
         <div class="container">
             <img class="img" src="img/WhatsApp Image 2025-07-18 at 11.10.23.jpeg" alt="fachada da loja Games Shop">
             <div>
-                <h2>Sobre Nós</h2>
+                <h2>SOBRE NÓS</h2>
                 <p>
                     A Athlon Engenharia atua desde 2016 com foco em gestão e concepção de negócios na construção civil.
                     Com agilidade, excelência e know-how técnico, entregamos soluções eficientes por meio de uma equipe qualificada, garantindo a satisfação de clientes e parceiros.                </p>
@@ -61,10 +67,10 @@
     </section>
     <section id="contact">
         <div class="container">
-            <h2>contato</h2>
+            <h2>CONTATO</h2>
             <div class="contact-methods">
                 <div>
-                    <h3>fale conosco</h3>
+                    <h3>fALE CONOSCO</h3>
                     <form id="myForm">
                         <input type="text" name="name" placeholder="seu nome" required>
                         <input type="email" name="email" placeholder="seu e-mail" required>
@@ -74,7 +80,7 @@
                     </form>
                 </div>
                 <div>
-                    <h3>nos acompanhe</h3>
+                    <h3>SIGA-NOS</h3>
                     <ul class="social-links">
                         <li>
                             <a href="https://www.instagram.com/athlonengenharia?igsh=amxlbTV0MGYxM2U5&utm_source=ig_contact_invite" title="siga-nos no instagram">
@@ -82,7 +88,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="www.facebook.com/profile.php?id=61550037399549&sk=grid" title="siga-nos no facebook">
+                            <a href="https://www.facebook.com/people/Athlon-Engenharia/61550037399549/?sk=grid" title="siga-nos no facebook">
                                 <img src="img/facebook.webp" alt="">
                             </a>
                         </li>
@@ -94,9 +100,9 @@
                     </ul>
                 </div>
                 <div>
-                    <h3>venha até nós</h3>
+                    <h3>ONDE ESTAMOS</h3>
                     <p>
-                        Rua abdalla addad, 222 - Centro<br>
+                        Rua abdalla Haddad 222 - Sala 5<br> Bairro Centro - Cep 38400115<br>
                         Uberlândia - MG<br>
                     </p>
                 </div>
@@ -110,17 +116,17 @@
             </p>
         </div>
     </footer>
-</body>
-<script type="text/javascript">
-  document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita recarregar página
-
-    emailjs.sendForm('service_v745iw3', 'template_kgm3fel', this)
-      .then(function() {
-        alert('Mensagem enviada com sucesso!');
-      }, function(error) {
-        alert('Falhou ao enviar: ' + JSON.stringify(error));
+    <script type="text/javascript">
+      document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita recarregar página
+    
+        emailjs.sendForm('service_v745iw3', 'template_kgm3fel', this)
+          .then(function() {
+            alert('Mensagem enviada com sucesso!');
+          }, function(error) {
+            alert('Falhou ao enviar: ' + JSON.stringify(error));
+          });
       });
-  });
-</script>
+    </script>
+</body>
 </html>

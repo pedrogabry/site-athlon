@@ -469,7 +469,7 @@ nav.menu ul li a {
     font-size: 14px;
     line-height: 1.5;
 }
-div.projeto-card.ativo h3, p {
+div.projeto-card.ativo h3{
     display: none;
 }
 

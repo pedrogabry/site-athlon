@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
     (function(){
         emailjs.init("_LqrJvH6AkJNS2elQ"); // Substitua pelo seu Public Key
@@ -74,7 +75,7 @@
                     <form id="myForm">
                         <input type="text" name="name" placeholder="seu nome" required>
                         <input type="email" name="email" placeholder="seu e-mail" required>
-                        <input type="tel" name="phone" placeholder="seu telefone (opciona)">
+                        <input type="tel" name="phone" placeholder="seu telefone" required>
                         <textarea name="valor" placeholder="sua mensagem " cols="30" rows="10" required></textarea>
                         <button type="submit">enviar</button>
                     </form>
@@ -121,8 +122,9 @@
         event.preventDefault(); // Evita recarregar página
     
         emailjs.sendForm('service_v745iw3', 'template_kgm3fel', this)
-          .then(function() {
+          .then(() => {
             alert('Mensagem enviada com sucesso!');
+            this.reset(); // Limpa o formulário após o envio
           }, function(error) {
             alert('Falhou ao enviar: ' + JSON.stringify(error));
           });
